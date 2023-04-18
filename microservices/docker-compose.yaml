@@ -15,6 +15,7 @@ services:
       - division
       - multiplication
       - subtraction
+      - lcm
   # Add more services below
   addition:
     build: ./addition
