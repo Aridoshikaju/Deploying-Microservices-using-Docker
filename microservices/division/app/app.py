@@ -6,10 +6,10 @@ import os
 app = Flask(__name__)
 app.secret_key = 'thisisjustarandomstring'
 
-@app.route("/<int:number_1>/<int:number_2>", methods=['POST', 'GET'])
-def divide(number_1,number_2):
+@app.route("/<int:num1>/<int:num2>", methods=['POST', 'GET'])
+def divide(num1,num2):
     try:
-        result = float(number_1) / float(number_2)
+        result = float(num1) / float(num2)
     except ZeroDivisionError:
         return "Error: division by zero"
     else:

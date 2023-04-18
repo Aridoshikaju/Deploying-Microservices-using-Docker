@@ -6,17 +6,17 @@ import os
 app = Flask(__name__)
 app.secret_key = 'thisisjustarandomstring'
 
-@app.route("/<int:number_1>/<int:number_2>", methods=['POST', 'GET'])
-def lcm(number_1,number_2):
-    if number_2 == 0:
+@app.route("/<int:num1>/<int:num2>", methods=['POST', 'GET'])
+def lcm(num1,num2):
+    if num2 == 0:
         return "Cannot find LCM of zero."
-    grt = max(number_1,number_2)
-    les = min(number_1,number_2)
-    temp = grt
+    max_var = max(num1,num2)
+    min_var = min(num1,num2)
+    temp = max_var
     while(True):
-        if(temp%les == 0):
+        if(temp%min_var == 0):
             return str(temp)
-        temp += grt
+        temp += max_var
 if __name__ == '__main__':
     app.run(
         debug=True,

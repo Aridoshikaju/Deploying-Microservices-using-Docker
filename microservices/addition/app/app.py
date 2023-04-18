@@ -14,9 +14,9 @@ app.secret_key = 'thisisjustarandomstring'
 
 # api.add_resource(Addition,"/<int:number_1>/<int:number_2")
 
-@app.route("/<int:number_1>/<int:number_2>", methods=['POST', 'GET'])
-def add(number_1,number_2):
-    return str(float(number_1)+float(number_2))
+@app.route("/<int:num1>/<int:num2>", methods=['POST', 'GET'])
+def add(num1,num2):
+    return str(float(num1)+float(num2))
 if __name__ == '__main__':
     app.run(
         debug=True,
